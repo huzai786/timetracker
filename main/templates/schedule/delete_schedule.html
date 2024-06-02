@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+
+<div class="container" style="padding-top: 100px;">
+    <h3>{% trans 'Delete Schedule' %}</h3>
+    <p>{% trans 'Are you sure you want to delete the Schedule' %} "{{ schedule.schedule_name }}"?</p>
+    <form action="{% url 'delete_schedule' schedule.id %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">{% trans 'Delete' %}</button>
+        <a href="{% url 'list_schedules' %}" class="btn btn-secondary">{% trans 'Go Back' %}</a>
+    </form>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+
+<div class="container" style="padding-top: 100px;">
+    <h3>{% trans 'Delete Employee' %}</h3>
+    <p>{% trans 'Are you sure you want to delete the Employee' %} "{{ emp.name }}"?</p>
+    <form action="{% url 'delete_employees' emp.uid %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a href="{% url 'get_employee' emp.uid %}" class="btn btn-dark">{% trans 'Go to' %} {{ emp.name }}</a>
+    </form>
+</div>
+
+{% endblock content %}

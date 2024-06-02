@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+<div class="container mt-5 mb-5" style="padding-top: 40px;">
+    <a href="{% url 'get_employee' clocking.employee.uid %}" class="btn btn-dark">{% trans 'go to' %}{{ clocking.employee.name }}</a>
+    <a href="{% url 'view_clockings' clocking.employee.uid %}" class="btn btn-dark">{% trans 'go back' %}</a>
+
+    <h1>{{ clocking.employee.name }}</h1>
+    <h3>{% trans 'Delete Clocking Record' %}</h3>
+    <form action="{% url 'delete_clocking' clocking.id %}" method="post">
+        {% csrf_token %}
+        <p>{% trans 'Are you sure you want to delete clocking record for ' %}"{{ clocking.employee.name }}"</p>
+        <input class="btn btn-outline-dark" type="submit" value="Delete">
+    </form>
+</div>
+
+{% endblock content %}

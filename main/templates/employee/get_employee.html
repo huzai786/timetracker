@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+
+<div class="container" style="padding-top: 100px;">
+    <a href="{% url 'list_employees' %}" class="btn btn-dark">{% trans 'go to employees table' %}</a>
+    <h3 class="card-title mt-2 mb-2">{{ employee.name }}</h3>
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <th scope="col">{% trans 'Name' %}</th>
+                <td>{{ employee.name }}</td>
+            </tr>
+            <tr>
+                <th scope="col">{% trans 'UID' %}</th>
+                <td>{{ employee.uid }}</td>
+            </tr>
+            <tr>
+                <th scope="col">{% trans 'Schedule Name' %}</th>
+                <td>{{ employee.schedule.schedule_name }}</td>
+            </tr>
+            <tr>
+                <th scope="col">{% trans 'Start Time' %}</th>
+                <td>{{ employee.schedule.starttime }}</td>
+            </tr>
+            <tr>
+                <th scope="col">{% trans 'End Time' %}</th>
+                <td colspan="3">{{ employee.schedule.endtime }}</td>
+            </tr>
+
+            <tr>
+                <th scope="col">{% trans 'Break Time' %}</th>
+                <td colspan="3">{{ employee.schedule.breaktime }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{% url 'view_clockings' employee.uid %}" class="btn btn-outline-dark">{% trans 'View Clocking Details' %}</a>
+    <a href="{% url 'view_attendence' employee.uid %}" class="btn btn-outline-dark">{% trans 'View Attendence' %}</a>
+    <a href="{% url 'view_overtime' employee.uid %}" class="btn btn-outline-dark">{% trans 'View Overtime' %}</a>
+    <a href="{% url 'update_employees' employee.uid %}" class="btn btn-outline-dark" style="float: right; margin-left: 20px;">Edit</a>
+    <a href="{% url 'delete_employees' employee.uid %}" class="btn btn-outline-dark ml-2" style="float: right;">Delete</a>
+
+
+</div>
+
+{% endblock content %}

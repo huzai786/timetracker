@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+<div class="container mt-5" style="padding-top: 40px;">
+    <a href="{% url 'get_employee' employee.uid %}" class="btn btn-dark">{% trans 'Back to' %} {{ employee.name }}</a>
+    <h3>{% trans 'Clocking Records for ' %} {{ employee.name }} - {{ month_string }} {{ current_year }}</h3>
+    <form method="get" action="{% url 'view_clockings' employee.uid %}" class="form-inline mb-4">
+        
+        <div class="form-group">
+            <label for="month">{% trans 'Month: ' %}</label>
+            <select name="month" id="month" class="form-control ml-2">
+                {% for month in months %}
+                    <option value="{{ month.0 }}" {% if month.0 == current_month %}selected{% endif %}>
+                        {{ month.1 }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group mr-2">
+            <label for="year">Year: </label>
+            <input type="number" name="year" id="year" class="form-control ml-2" value="{{ current_year }}" min="2000" max="{{ year_now }}">
+        </div>
+        <button type="submit" class="btn btn-dark">{% trans 'View Records' %}</button>
+    </form>
+    
+    <a href="{% url 'create_clocking' employee.uid %}" class="btn btn-dark mb-2">{% trans 'Create Clocking Record' %}</a>
+    <div class="nk-block nk-block-lg">
+        <table class="datatable-init nowrap nk-tb-list is-separate" data-auto-responsive="false">            
+            <thead>
+                <tr class="nk-tb-item nk-tb-head">
+                    <th class="nk-tb-col"><span>{% trans 'Date' %}</span></th>
+                    <th class="nk-tb-col"><span>{% trans 'Clock In Time' %}</span></th>
+                    <th class="nk-tb-col"><span>{% trans 'Clock Out Time' %}</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for date, times in grouped_clockings.items %}
+                    <tr class="nk-tb-item">
+                        <td class="nk-tb-col"><span class="tb-sub">{{ date }}</span></td>
+                        {% if times.clock_in %}
+                        <td class="nk-tb-col"><span class="tb-sub">{{ times.clock_in }} <a href="{% url 'edit_clocking' times.clock_in_id %}">Edit</a> <a href="{% url 'delete_clocking' times.clock_in_id %}">Delete</a></span></td>
+                        {% else %}
+                        <td class="nk-tb-col"><span class="tb-sub">{% trans 'Not available.' %} <a href="{% url 'edit_clocking' employee.uid %}">Create</a> </span></td>
+                        {% endif %}
+
+                        {% if times.clock_out %}
+                        <td class="nk-tb-col"><span class="tb-sub">{{ times.clock_out }} <a href="{% url 'edit_clocking' times.clock_out_id %}">Edit</a> <a href="{% url 'delete_clocking' times.clock_out_id %}">Delete</a></span></td>
+                        {% else %}
+                        <td class="nk-tb-col"><span class="tb-sub">{% trans 'Not available.' %} <a href="{% url 'create_clocking' employee.uid %}">Create</a> </span></td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+</div>
+{% endblock content %}

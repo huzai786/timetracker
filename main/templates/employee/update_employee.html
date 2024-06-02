@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+<div class="container mt-5 mb-5" style="padding-top: 60px;">
+    <a href="{% url 'list_employees' %}" class="btn btn-dark">{% trans 'Go to Employees' %}</a>
+    <a href="{% url 'get_employee' emp.uid %}" class="btn btn-dark">{% trans 'Go to' %} {{ emp.name }}</a>
+    <h3>{% trans 'Update Employee' %}</h3>
+    <form action="{% url 'update_employees' emp.uid %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="btn btn-outline-dark" type="submit" value="{% trans 'Update Employee' %}">
+    </form>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+<div class="container mt-5" style="padding-top: 40px;">
+    <a href="{% url 'view_clockings' clocking.employee.uid %}" class="btn btn-dark">{% trans 'Go back to clocking records' %}</a>
+    <h3>{% trans 'Edit Clocking Record for' %} {{ clocking.employee.name }}</h3>
+    
+    <form method="post" class="form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        
+        <button type="submit" class="btn btn-outline-dark">Save Changes</button>
+    </form>
+</div>
+{% endblock content %}

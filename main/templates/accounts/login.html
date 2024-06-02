@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+
+<div class="nk-app-root">
+    <div class="nk-main ">
+        <div class="nk-wrap nk-wrap-nosidebar">
+            <div class="nk-content ">
+                <div class="nk-split nk-split-page nk-split-lg">
+                    <div class="nk-split-content nk-block-area nk-block-area-column nk-auth-container bg-white">
+                        <div class="absolute-top-right d-lg-none p-3 p-sm-5"><a href="#"
+                                class="toggle btn-white btn btn-icon btn-light" data-target="athPromo"><em
+                                    class="icon ni ni-info"></em></a></div>
+                        <div class="nk-block nk-block-middle nk-auth-body">
+                            <div class="nk-block-head">
+                                <div class="nk-block-head-content">
+                                    <h5 class="nk-block-title">Sign-In</h5>
+                                </div>
+                            </div>
+
+                            <form action="{% url 'login' %}" method="post" class="form-validate is-alter" autocomplete="off">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <div class="form-label-group"><label class="form-label"
+                                            for="email-address">username</label>
+                                    </div>
+                                    <div class="form-control-wrap">
+                                        <input autocomplete="off" type="text"
+                                            class="form-control form-control-lg" name="username" required id="email-address"
+                                            placeholder="Enter username">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-label-group"><label class="form-label"
+                                            for="password">password</label>
+                                        </div>
+                                    <div class="form-control-wrap"><a tabindex="-1" href="#"
+                                            class="form-icon form-icon-right passcode-switch lg"
+                                            data-target="password"><em
+                                                class="passcode-icon icon-show icon ni ni-eye"></em><em
+                                                class="passcode-icon icon-hide icon ni ni-eye-off"></em></a>
+                                                <input autocomplete="new-password" type="password" name="password" class="form-control form-control-lg" required id="password"
+                                            placeholder="Enter Password"></div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" class="btn btn-lg btn-dark btn-block" value="Sign In">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+

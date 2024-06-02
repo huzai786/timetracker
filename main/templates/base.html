@@ -1,0 +1,179 @@
+{% load i18n %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx" class="js">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Softnio">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% trans 'Time Tracker' %}</title>
+    <link rel="stylesheet" href="{% static 'css/dashlite.css' %}">
+    <link id="skin-default" rel="stylesheet" href="{% static 'css/theme.css' %}">
+</head>
+
+<body class="nk-body bg-lighter npc-default has-sidebar">
+    <div class="nk-app-root">
+        <div id="alert-container" style="z-index: 999; top: 0; right: 0; position: absolute;">
+            {% for message in messages %}
+            <div class="alert alert-dismissible alert-primary" style="z-index: 999;" role="alert">
+                <em class="icon ni ni-alert-circle"></em>
+                {{ message | safe }}            
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="nk-main ">
+            <!-- side bar -->
+            <div class="nk-sidebar nk-sidebar-fixed is-light " data-content="sidebarMenu">
+                <div class="nk-sidebar-element nk-sidebar-head">
+                    <div class="nk-sidebar-brand">
+                        <a href="{% url 'home' %}" class="logo-link nk-sidebar-logo">
+                        </a>
+                    </div>
+                    <div class="nk-menu-trigger me-n2"><a href="#" class="nk-nav-toggle nk-quick-nav-icon d-xl-none"
+                            data-target="sidebarMenu"><em class="icon ni ni-arrow-left"></em></a><a href="#"
+                            class="nk-nav-compact nk-quick-nav-icon d-none d-xl-inline-flex"
+                            data-target="sidebarMenu"><em class="icon ni ni-menu"></em></a></div>
+                </div>
+                <div class="nk-sidebar-element">
+                    <div class="nk-sidebar-content">
+                        <div class="nk-sidebar-menu" data-simplebar>
+                            <ul class="nk-menu">
+                                <li class="nk-menu-item">
+                                    <a href="{% url 'home' %}" class="nk-menu-link">
+                                        <span class="nk-menu-icon">
+                                            <em class="icon ni ni-view-col">
+                                            </em>
+                                        </span>
+                                        <span class="nk-menu-text">
+                                            {% trans 'Dashboard' %}
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="{% url 'list_schedules' %}" class="nk-menu-link">
+                                        <span class="nk-menu-icon">
+                                            <em class="icon ni ni-view-col">
+                                            </em>
+                                        </span>
+                                        <span class="nk-menu-text">
+                                            {% trans 'Schedules' %}
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="{% url 'list_employees' %}" class="nk-menu-link">
+                                        <span class="nk-menu-icon">
+                                            <em class="icon ni ni-view-col">
+                                            </em>
+                                        </span>
+                                        <span class="nk-menu-text">
+                                            {% trans 'Employees' %}
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="{% url 'generate_report' %}" class="nk-menu-link">
+                                        <span class="nk-menu-icon">
+                                            <em class="icon ni ni-view-col">
+                                            </em>
+                                        </span>
+                                        <span class="nk-menu-text">
+                                            {% trans 'Reports' %}
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="{% url 'view_clocking' %}" class="nk-menu-link">
+                                        <span class="nk-menu-icon">
+                                            <em class="icon ni ni-view-col">
+                                            </em>
+                                        </span>
+                                        <span class="nk-menu-text">
+                                            {% trans 'View Clocking Records' %}
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end side bar -->
+
+            <div class="nk-wrap ">
+                <!-- header -->
+                {% block header %}
+                <div class="nk-header nk-header-fixed is-light">
+                    <div class="container-fluid">
+                        <div class="nk-header-wrap">
+                            <div class="nk-menu-trigger d-xl-none ms-n1"><a href="#"
+                                    class="nk-nav-toggle nk-quick-nav-icon" data-target="sidebarMenu"><em
+                                        class="icon ni ni-menu"></em></a></div>
+                                        <h3 style="padding-top: 10px;">{% trans 'Time Tracking System' %}</h3>
+                            <div class="nk-header-tools">
+                                <ul class="nk-quick-nav" style="height: 30px;">
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endblock header %}
+                 
+                <!-- end header -->
+                {% block content %}
+
+                {% endblock content %}
+                <!-- footer start -->
+                <div class="nk-footer">
+                    <div class="container-fluid">
+                        <div class="nk-footer-wrap">
+                            <div class="nk-footer-copyright"></div>
+                            <div class="nk-footer-links">
+                                <ul class="nav nav-sm">
+                                    <li class="nav-item dropup"><a href="#"
+                                            class="dropdown-toggle dropdown-indicator has-indicator nav-link text-base"
+                                            data-bs-toggle="dropdown" data-offset="0,10"><span>English</span></a>
+                                        <div class="dropdown-menu dropdown-menu-sm dropdown-menu-end">
+                                            <ul class="language-list">
+                                                <li><a href="/en/" class="language-item"><span
+                                                            class="language-name">English</span></a></li>
+                                                <li><a href="/es/" class="language-item"><span
+                                                            class="language-name">Español</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- footer start -->
+            </div>
+        </div>
+    </div> 
+<script>
+    setTimeout(function() {
+        var alertContainer = document.getElementById('alert-container');
+        if (alertContainer) {
+            alertContainer.innerHTML = ''; 
+        }
+    }, 4000); 
+
+    document.addEventListener('click', function(event) {
+        var clickedElement = event.target;
+        if (clickedElement.classList.contains('alert')) {
+            clickedElement.remove(); 
+        }
+    });
+</script>
+    <script src="{% static 'js/bundle.js' %}"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
+    <script src="{% static 'js/demo-settings.js' %}"></script>
+</body>
+
+</html>

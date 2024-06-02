@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+<div class="container mt-5" style="padding-top: 40px;">
+    <h3>{% trans 'Generate Report' %} </h3>
+    <form method="post" action="{% url 'generate_report' %}">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.employees.label_tag }}<br>
+            {{ form.employees }}
+        </div>
+        <div class="form-group">
+            {{ form.start_date.label_tag }}
+            {{ form.start_date }}
+        </div>
+        <div class="form-group">
+            {{ form.end_date.label_tag }}
+            {{ form.end_date }}
+        </div>
+        <button type="submit" class="btn btn-dark">{% trans 'Generate and Download Report' %}</button>
+    </form>
+</div>
+{% endblock %}

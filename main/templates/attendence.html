@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+<div class="container mt-5" style="padding-top: 50px;">
+    <a href="{% url 'get_employee' employee.uid %}" class="btn btn-dark">{% trans 'Back to' %} {{ employee.name }}</a>
+    <h3>{% trans 'Attendance for' %} {{ employee.name }} - {{ month_string }} {{ current_year }}</h3>
+
+    <form method="get" action="{% url 'view_attendence' employee.uid %}" class="form-inline mb-4">
+        <div class="form-group mr-2">
+            <label for="month">{% trans 'Month' %}: </label>
+            <select name="month" id="month" class="form-control ml-2">
+                {% for month in months %}
+                    <option value="{{ month.0 }}" {% if month.0 == current_month %}selected{% endif %}>
+                        {{ month.1 }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group mr-2">
+            <label for="year">{% trans 'Year' %}: </label>
+            <input type="number" name="year" id="year" class="form-control ml-2" value="{{ current_year }}" min="2000" max="{{ year_now }}">
+        </div>
+        <button type="submit" class="btn btn-dark">{% trans 'View Records' %}</button>
+    </form>
+
+    <div class="nk-block nk-block-lg pr-3">
+        <table class="datatable-init nowrap nk-tb-list is-separate " data-auto-responsive="false">
+            <thead>
+                <tr class="nk-tb-item nk-tb-head">
+                    <th class="nk-tb-col tb-col-sm"><span>{% trans 'Date' %}</span></th>
+                    <th class="nk-tb-col"><span>{% trans 'Status' %}</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for day, status in attendance.items %}
+                    <tr class="nk-tb-item">
+                        <td class="nk-tb-col"><span class="tb-sub">{{ day }}</span></td>
+                        <td class="nk-tb-col"><span class="tb-sub">{{ status }}</span></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock content %}

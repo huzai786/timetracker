@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+<div class="container mt-5 mb-5" style="padding-top: 40px;">
+    <a href="{% url 'get_employee' employee.uid %}" class="btn btn-dark">{% trans 'go to' %}{{ employee.name }}</a>
+    <a href="{% url 'view_clockings' employee.uid %}" class="btn btn-dark">{% trans 'go back' %}</a>
+
+    <h1>{{ employee.name }}</h1>
+    <h3>{% trans 'Create Clocking Record' %}</h3>
+    <form action="{% url 'create_clocking' employee.uid %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="btn btn-outline-dark" type="submit" value="Create">
+    </form>
+</div>
+
+{% endblock content %}

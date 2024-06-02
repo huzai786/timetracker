@@ -1,0 +1,296 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-06-02 15:28+0500\n"
+"PO-Revision-Date: 2024-06-02 18:22+0000\n"
+"Last-Translator:   <>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"X-Translated-Using: django-rosetta 0.10.0\n"
+
+#: .\templates\attendence.html:4 .\templates\clocking\clocking.html:4
+#: .\templates\overtime.html:4
+msgid "Back to"
+msgstr "De regreso"
+
+#: .\templates\attendence.html:5
+msgid "Attendance for"
+msgstr "Asistencia a"
+
+#: .\templates\attendence.html:9 .\templates\clocking_records.html:8
+#: .\templates\overtime.html:8
+msgid "Month"
+msgstr "Mes"
+
+#: .\templates\attendence.html:19 .\templates\clocking_records.html:16
+msgid "Year"
+msgstr "Año"
+
+#: .\templates\attendence.html:22 .\templates\clocking\clocking.html:22
+#: .\templates\overtime.html:21
+msgid "View Records"
+msgstr "Ver registros"
+
+#: .\templates\attendence.html:29 .\templates\clocking\clocking.html:30
+#: .\templates\clocking_records.html:27 .\templates\overtime.html:27
+msgid "Date"
+msgstr "Fecha"
+
+#: .\templates\attendence.html:30
+msgid "Status"
+msgstr "Estado"
+
+#: .\templates\base.html:11
+msgid "Time Tracker"
+msgstr "Rastreador de tiempo"
+
+#: .\templates\base.html:51 .\templates\home.html:11
+msgid "Dashboard"
+msgstr "panel"
+
+#: .\templates\base.html:62
+msgid "Schedules"
+msgstr "Horarios"
+
+#: .\templates\base.html:73
+msgid "Employees"
+msgstr "Empleados"
+
+#: .\templates\base.html:84
+msgid "Reports"
+msgstr "Informes"
+
+#: .\templates\base.html:95
+msgid "View Clocking Records"
+msgstr "Ver registros de marcado "
+
+#: .\templates\base.html:116
+msgid "Time Tracking System"
+msgstr "Sistema de seguimiento del tiempo "
+
+#: .\templates\clocking\clocking.html:5
+msgid "Clocking Records for "
+msgstr "Registros de fichaje para "
+
+#: .\templates\clocking\clocking.html:9
+msgid "Month: "
+msgstr "Mes: "
+
+#: .\templates\clocking\clocking.html:25
+#: .\templates\clocking\create_clocking.html:8
+msgid "Create Clocking Record"
+msgstr "Crear registro de fichaje "
+
+#: .\templates\clocking\clocking.html:31 .\templates\clocking_records.html:29
+msgid "Clock In Time"
+msgstr "Reloj en el tiempo "
+
+#: .\templates\clocking\clocking.html:32 .\templates\clocking_records.html:30
+msgid "Clock Out Time"
+msgstr "Hora de salida "
+
+#: .\templates\clocking\clocking.html:42 .\templates\clocking\clocking.html:48
+msgid "Not available."
+msgstr "No disponible. "
+
+#: .\templates\clocking\create_clocking.html:4
+#: .\templates\clocking\delete_clocking.html:4
+msgid "go to"
+msgstr "ir a "
+
+#: .\templates\clocking\create_clocking.html:5
+#: .\templates\clocking\delete_clocking.html:5
+msgid "go back"
+msgstr "regresa "
+
+#: .\templates\clocking\delete_clocking.html:8
+msgid "Delete Clocking Record"
+msgstr "Eliminar registro de fichaje "
+
+#: .\templates\clocking\delete_clocking.html:11
+msgid "Are you sure you want to delete clocking record for "
+msgstr "¿Está seguro de que desea eliminar el registro de marcado de \t"
+
+#: .\templates\clocking\edit_clocking.html:4
+msgid "Go back to clocking records"
+msgstr "Volver a los registros de fichaje "
+
+#: .\templates\clocking\edit_clocking.html:5
+msgid "Edit Clocking Record for"
+msgstr "Editar registro de marcado para "
+
+#: .\templates\clocking_records.html:4
+msgid "All Clocking Records"
+msgstr "Todos los registros de marcación "
+
+#: .\templates\clocking_records.html:19
+msgid "Filter"
+msgstr "Filtrar "
+
+#: .\templates\clocking_records.html:28 .\templates\overtime.html:28
+msgid "Employee"
+msgstr "Empleado "
+
+#: .\templates\employee\create_employee.html:5
+#: .\templates\employee\get_employee.html:5
+msgid "go to employees table"
+msgstr "ir a la mesa de empleados "
+
+#: .\templates\employee\create_employee.html:6
+#: .\templates\employee\list_employee.html:13
+#: .\templates\employee\list_employee.html:16
+msgid "Create Employee"
+msgstr "Crear empleado "
+
+#: .\templates\employee\delete_employee.html:5
+msgid "Delete Employee"
+msgstr "Eliminar empleado "
+
+#: .\templates\employee\delete_employee.html:6
+msgid "Are you sure you want to delete the Employee"
+msgstr "¿Está seguro de que desea eliminar al empleado? "
+
+#: .\templates\employee\delete_employee.html:10
+#: .\templates\employee\update_employee.html:5
+msgid "Go to"
+msgstr "Ir a "
+
+#: .\templates\employee\get_employee.html:10
+msgid "Name"
+msgstr "Nombre "
+
+#: .\templates\employee\get_employee.html:14
+msgid "UID"
+msgstr "UID "
+
+#: .\templates\employee\get_employee.html:18
+#: .\templates\employee\list_employee.html:24
+#: .\templates\schedule\list_schedule.html:27
+msgid "Schedule Name"
+msgstr "Nombre del horario "
+
+#: .\templates\employee\get_employee.html:22
+msgid "Start Time"
+msgstr "Hora de inicio "
+
+#: .\templates\employee\get_employee.html:26
+msgid "End Time"
+msgstr "Hora de finalización "
+
+#: .\templates\employee\get_employee.html:31
+#: .\templates\employee\list_employee.html:27
+#: .\templates\schedule\list_schedule.html:30
+msgid "Break Time"
+msgstr "Descanso "
+
+#: .\templates\employee\get_employee.html:37
+msgid "View Clocking Details"
+msgstr "Ver detalles de marcado "
+
+#: .\templates\employee\get_employee.html:38
+msgid "View Attendence"
+msgstr "Ver asistencia "
+
+#: .\templates\employee\get_employee.html:39
+msgid "View Overtime"
+msgstr "Ver horas extras "
+
+#: .\templates\employee\list_employee.html:9
+#: .\templates\schedule\list_schedule.html:9
+msgid "Go to Dashboard"
+msgstr "Ir al panel de control "
+
+#: .\templates\employee\list_employee.html:23
+msgid "Employee Name"
+msgstr "Nombre de empleado "
+
+#: .\templates\employee\list_employee.html:25
+#: .\templates\schedule\list_schedule.html:28
+msgid "Start time"
+msgstr "Hora de inicio "
+
+#: .\templates\employee\list_employee.html:26
+#: .\templates\schedule\list_schedule.html:29
+msgid "End time"
+msgstr "Hora de finalización "
+
+#: .\templates\employee\update_employee.html:4
+msgid "Go to Employees"
+msgstr "Ir a Empleados "
+
+#: .\templates\employee\update_employee.html:6
+#: .\templates\employee\update_employee.html:10
+msgid "Update Employee"
+msgstr " Actualizar empleado "
+
+#: .\templates\overtime.html:5
+msgid "Overtime Records for"
+msgstr "Récords de horas extras para "
+
+#: .\templates\overtime.html:29
+msgid "Clock In Overtime"
+msgstr "Reloj en horas extras "
+
+#: .\templates\overtime.html:30
+msgid "Clock Out Overtime"
+msgstr "Horas extras "
+
+#: .\templates\reports\generate_reports.html:5
+msgid "Generate Report"
+msgstr "Generar informe "
+
+#: .\templates\reports\generate_reports.html:20
+msgid "Generate and Download Report"
+msgstr "Generar y descargar informe "
+
+#: .\templates\schedule\create_schedule.html:4
+#: .\templates\schedule\update_schedule.html:4
+msgid "go to schedules"
+msgstr "ir a horarios "
+
+#: .\templates\schedule\create_schedule.html:5
+#: .\templates\schedule\list_schedule.html:13
+#: .\templates\schedule\list_schedule.html:20
+msgid "Create Schedule"
+msgstr "Crear horario "
+
+#: .\templates\schedule\delete_schedule.html:5
+msgid "Delete Schedule"
+msgstr "Eliminar horario "
+
+#: .\templates\schedule\delete_schedule.html:6
+msgid "Are you sure you want to delete the Schedule"
+msgstr "¿Estás seguro de que deseas eliminar el programa? "
+
+#: .\templates\schedule\delete_schedule.html:9
+#: .\templates\schedule\list_schedule.html:43
+msgid "Delete"
+msgstr "Borrar "
+
+#: .\templates\schedule\delete_schedule.html:10
+msgid "Go Back"
+msgstr "Regresa "
+
+#: .\templates\schedule\list_schedule.html:15
+msgid "Create schedule to add employee to."
+msgstr "Cree un horario para agregar empleados."
+
+#: .\templates\schedule\list_schedule.html:42
+msgid "Edit"
+msgstr "Editar"
+
+#: .\templates\schedule\update_schedule.html:5
+#: .\templates\schedule\update_schedule.html:9
+msgid "Update Schedule"
+msgstr "Calendario de actualización"

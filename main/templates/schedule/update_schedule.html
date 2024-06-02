@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+<div class="container mt-5 mb-5" style="padding-top: 60px;">
+    <a href="{% url 'list_schedules' %}">{% trans 'go to schedules' %}</a>
+    <h3>{% trans 'Update Schedule' %}</h3>
+    <form action="{% url 'update_schedule' schedule.id %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="btn btn-light" type="submit" value="{% trans 'Update Schedule' %}">
+    </form>
+</div>
+
+{% endblock content %}

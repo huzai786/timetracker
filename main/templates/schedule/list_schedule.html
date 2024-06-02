@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+
+<div class="nk-content">
+    <div class="container-fluid">
+        <div class="nk-content-inner">
+            <div class="nk-content-body">
+                <div class="components-preview wide-md mx-auto">
+                    <a href="{% url 'home' %}"> {% trans 'Go to Dashboard' %}</a>
+
+                    <div class="nk-block-head nk-block-head-lg wide-sm">
+                        <div class="nk-block-head-content">
+                            <h2 class="nk-block-title fw-normal">{% trans 'Create Schedule' %}</h2>
+                            <div class="nk-block-des">
+                                <p>{% trans 'Create schedule to add employee to.' %}</p>
+                            </div>
+    
+                        </div>
+                    </div> 
+                    <a class="btn btn-dark mb-3" href="{% url 'create_schedule' %}">{% trans 'Create Schedule' %}</a>
+
+                    <div class="nk-block nk-block-lg">
+                        <table class="datatable-init nowrap nk-tb-list is-separate" data-auto-responsive="false">
+
+                            <thead>
+                                <tr class="nk-tb-item nk-tb-head">
+                                    <th class="nk-tb-col tb-col-sm"><span>{% trans 'Schedule Name' %}</span></th>
+                                    <th class="nk-tb-col"><span>{% trans 'Start time' %}</span></th>
+                                    <th class="nk-tb-col"><span>{% trans 'End time' %}</span></th>
+                                    <th class="nk-tb-col"><span>{% trans 'Break Time' %}</span></th>
+                                    <th class="nk-tb-col tb-col-md"><span></span></th>
+                                    <th class="nk-tb-col tb-col-md"><span></span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for schedule in schedules %}
+                                    <tr class="nk-tb-item">
+                                        <td class="nk-tb-col"><span class="tb-sub">{{ schedule.schedule_name }}</span></td>
+                                        <td class="nk-tb-col"><span class="tb-sub">{{ schedule.starttime }}</span></td>
+                                        <td class="nk-tb-col"><span class="tb-sub">{{ schedule.endtime }}</span></td>
+                                        <td class="nk-tb-col"><span class="tb-sub">{{ schedule.breaktime }}</span></td>
+                                        <td class="nk-tb-col tb-col-md"><span class="tb-sub"><a href="{% url 'update_schedule' schedule.id %}">{% trans 'Edit' %}</a></span></td>
+                                        <td class="nk-tb-col tb-col-md"><span class="tb-sub"><a href="{% url 'delete_schedule' schedule.id %}">{% trans 'Delete' %}</a></span></td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+
+                        </table>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

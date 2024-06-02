@@ -1,0 +1,6 @@
+django
+mysqlclient
+pn532pi
+shortuuid
+weasyprint
+django-rosetta
