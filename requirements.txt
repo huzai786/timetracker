@@ -1,6 +1,7 @@
 django
 mysqlclient
-pn532pi
 shortuuid
 weasyprint
 django-rosetta
+python-dotenv
+gunicorn
